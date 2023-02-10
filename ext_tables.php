@@ -1,13 +1,15 @@
 <?php
-if(!defined('TYPO3_MODE')) {
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+if(!defined('TYPO3')) {
 	die('Access denied.');
 }
 
 // TypoScript
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('mindshape_cookie_hint', 'Configuration/TypoScript', 'mindshape Cookie Hint');
+ExtensionManagementUtility::addStaticFile('mindshape_cookie_hint', 'Configuration/TypoScript', 'mindshape Cookie Hint');
 
 // Plugin
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
 	'mindshape_cookie_hint',
 	'Main',
 	'Cookies'

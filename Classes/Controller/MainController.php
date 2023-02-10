@@ -25,7 +25,7 @@ namespace Mindshape\MindshapeCookieHint\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -37,7 +37,8 @@ class MainController extends ActionController
     /**
      * @return void
      */
-    public function cookieAction()
+    public function cookieAction(): ResponseInterface
     {
+        return $this->htmlResponse();
     }
 }
